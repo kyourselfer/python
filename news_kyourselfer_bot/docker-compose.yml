@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  news_bot:
+    build: .
+    container_name: news_bot
+    env_file:
+      - .env
+    restart: "no"   # скрипт отработал и вышел
+
