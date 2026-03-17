@@ -1,0 +1,15 @@
+# https://github.com/Flowseal/tg-ws-proxy
+services:
+  tg-ws-proxy:
+    build:
+      context: ./ # путь к клонированному репо
+      dockerfile: Dockerfile
+    image: tg-ws-proxy:custom
+    container_name: tg-ws-proxy
+    working_dir: /app
+    restart: unless-stopped
+    ports:
+      - "1080:1080"          # порт SOCKS5 наружу
+    environment:
+      TZ: "Europe/Moscow"
+
